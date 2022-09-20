@@ -14,15 +14,6 @@ if (IS_PROD) {
 }
 module.exports = defineConfig({
   transpileDependencies: true,
-  // configureWebpack: {
-  //   externals: {
-  //     'vue': 'Vue', // CDN 的 Element 依赖全局变量 Vue， 所以 Vue 也需要使用 CDN 引入
-  //     'vue-router': 'VueRouter',
-  //     'vuex': 'Vuex',
-  //     'element-ui': 'ELEMENT', // 不去 node_modules 中找，而是去找 全局变量 ELEMENT
-  //     'axios': 'axios'
-  //   }
-  // },
   chainWebpack: (config) => {
     if (IS_PROD) {
       config.plugin('webpack-bundle-analyzer')
@@ -39,12 +30,6 @@ module.exports = defineConfig({
       // 移除 preload 插件，避免加载多余的资源
       config.plugins.delete('preload');
     }
-    config.externals({
-      'vue': 'Vue', // CDN 的 Element 依赖全局变量 Vue， 所以 Vue 也需要使用 CDN 引入
-      'vue-router': 'VueRouter',
-      'vuex': 'Vuex',
-      'element-ui': 'ELEMENT', // 不去 node_modules 中找，而是去找 全局变量 ELEMENT
-      'axios': 'axios'
-    })
+    // config.externals(externals)
   }
 })

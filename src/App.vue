@@ -1,22 +1,22 @@
 <template>
   <div id="app">
     <nav>
-      <!-- <router-link to="/"><Button type="primary">Home</Button></router-link> |
-      <router-link to="/about"><Button type="primary">About</Button></router-link> -->
-      <router-link to="/"><el-button type="primary">Home</el-button></router-link> |
-      <router-link to="/about"><el-button type="primary">About</el-button></router-link>
+      <router-link to="/"><Button type="primary">Home</Button></router-link> |
+      <router-link to="/about"><Button type="primary">About</Button></router-link>
+      <!-- <router-link to="/"><el-button type="primary">Home</el-button></router-link> |
+      <router-link to="/about"><el-button type="primary">About</el-button></router-link> -->
     </nav>
     <router-view/>
   </div>
 </template>
 
 <script>
-// import { Button } from 'element-ui'
-// export default {
-//   components: {
-//     Button
-//   }
-// }
+import { Button } from 'element-ui'
+export default {
+  components: {
+    Button
+  }
+}
 </script>
 
 <style>
