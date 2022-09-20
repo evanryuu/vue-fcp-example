@@ -34,6 +34,10 @@ module.exports = defineConfig({
             openAnalyzer: false
           }
         ))
+      // 移除prefetch插件，避免加载多余的资源
+      config.plugins.delete('prefetch');
+      // 移除 preload 插件，避免加载多余的资源
+      config.plugins.delete('preload');
     }
     config.externals({
       'vue': 'Vue', // CDN 的 Element 依赖全局变量 Vue， 所以 Vue 也需要使用 CDN 引入
