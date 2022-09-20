@@ -13,6 +13,7 @@ if (IS_PROD) {
   }
 }
 module.exports = defineConfig({
+  publicPath: '/fcp',
   transpileDependencies: true,
   chainWebpack: (config) => {
     if (IS_PROD) {
